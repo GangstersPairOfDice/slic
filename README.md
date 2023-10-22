@@ -1,6 +1,6 @@
 # SLIC - Simple Lisp In C
 
-`slic` is a simple lisp language written in C, guided by [Build Your Own Lisp](https://buildyourownlisp.com)
+`slic` is a simple lisp language written in C, guided by [Build Your Own Lisp](https://buildyourownlisp.com).
 
 ## Usage
 
