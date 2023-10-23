@@ -1,4 +1,8 @@
 #include <stdio.h> // importing header which is a standard lib for common functions
+#include <stdlib.h> // gives us acess to the `free` function
+
+#include <editline/readline.h> // read input from some prompt, while allowing editing of the input
+//#include <editline/history.h> // lets us record history of inputs so we can retrieve with up and down arrow keys
 
 // declare a buffer for user input of size 2048 characters
 static char input[2048]; // static controls visibility outside of file - cannot be used externally
@@ -13,14 +17,17 @@ int main(int argc, char** argv) {
   // make a never ending loop
   while (1) {
 
-    // Output our prompt
-    fputs("slic> ", stdout); // we use fput to decide whether we want to add a \n, and to decide the file stream of the output
+    // outputs prompt and gets input
+    char* input = readline("slic> ");
 
-    // read a line of user input of a maximum size of 2048 characters
-    fgets(input, 2048, stdin); // chars are stored in var `input`, with a size of 2048, in file stream `stdin` for keyboard input
+    // add input to history
+    add_history(input);
 
     // echo input back to user
-    printf("No you're a %s", input);
+    printf("No you're a %s\n", input);
+
+    // free retrieved input ( deletes readline input, since it allocates new memory when called )
+    free(input);
   }
 
   return 0; // returns 0, to tell main that it ran without any errors
