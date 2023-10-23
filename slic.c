@@ -30,7 +30,7 @@ int main(int argc, char** argv) {
 
   // prints introduction, version, and exit information
   puts("Welcome to SLIC - Simple Lisp In C");
-  puts("Current Version: 0.1");
+  puts("Current Version: 0.2");
   puts("Press Ctrl+C to Exit\n");
 
   // make a never ending loop
@@ -43,7 +43,7 @@ int main(int argc, char** argv) {
     add_history(input);
 
     // echo input back to user
-    printf("No you're a %s\n", input);
+    printf("Sorry, I am still a n00b. What is a \'%s\'\?\n", input);
 
     // free retrieved input ( deletes readline input, since it allocates new memory when called )
     free(input);
