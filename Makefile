@@ -1,2 +1,2 @@
 slic: slic.c
-  $(CC) slic.c -o slic -Wall -Wextra -pedantic -std=c99
+  $(CC) slic.c -ledit -o slic -std=c99 -Wall -Wextra -pedantic
